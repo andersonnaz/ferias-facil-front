@@ -116,7 +116,7 @@ function App() {
       const formData = new FormData();
       formData.append('file', file, file.name);
 
-      const resp = await fetch('http://localhost:3000/api/generate', {
+      const resp = await fetch('https://feriasfacil-api.onrender.com/api/generate', {
         method: 'POST',
         body: formData,
       });
