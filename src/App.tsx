@@ -155,7 +155,7 @@ function App() {
   return (
     <div className="items-start mx-auto mt-3 w-full max-w-[55rem] px-5 py-3">
       <header id="topo" className="flex items-center border-b border-[#C2C2C2] py-4 px-0 gap-4">
-        <img src="/public/logoFeriasFacil.svg" className="h-12 w-auto" alt="Férias Fácil logo" />
+        <img src="/logoFeriasFacil.svg" className="h-12 w-auto" alt="Férias Fácil logo" />
         <NavBar />
       </header>
 
@@ -239,7 +239,7 @@ function App() {
             respeite todos os títulos das colunas, por exemplo:
             "graduacao", "ultimaPromocao", "opcao1".
           </h1>
-          <img src="public/tabela.svg" className='w-120 h-45' />
+          <img src="/tabela.svg" className='w-120 h-45' />
         </div>
         <div>
           <iframe 
