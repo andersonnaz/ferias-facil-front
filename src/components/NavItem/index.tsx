@@ -6,7 +6,7 @@ interface NavItemProps {
 export function NavItem ({title, to}: NavItemProps) {
     return(
         <a href={to} >
-            <span className="text-[#333333]">
+            <span className="text-[#217346] font-semibold">
                 {title}
             </span>
         </a>
