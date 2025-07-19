@@ -6,6 +6,7 @@ import { MdEmail } from 'react-icons/md';
 import { FaGithub } from 'react-icons/fa';
 import { GoFileDirectoryFill } from 'react-icons/go';
 import { RiFileExcel2Line } from 'react-icons/ri';
+import { CheckIcon, DotIcon } from 'lucide-react';
 
 type UploadStatus = 'idle' | 'uploading' | 'success' | 'error'
 
@@ -155,7 +156,7 @@ function App() {
   return (
     <div className="items-start mx-auto mt-3 w-full max-w-[55rem] px-5 py-3">
       <header id="topo" className="flex items-center border-b border-[#C2C2C2] py-4 px-0 gap-4">
-        <img src="/logoFeriasFacil.svg" className="h-12 w-auto" alt="Férias Fácil logo" />
+        <img src="/logoNovoFeriasFacil.svg" className="h-20 w-auto" alt="Férias Fácil logo" />
         <NavBar />
       </header>
 
@@ -171,7 +172,7 @@ function App() {
             onDragLeave={onDragLeave}
             onDrop={onDrop}
           >
-            <RiFileExcel2Line size={40}/> 
+            <RiFileExcel2Line color="#217346" size={40}/> 
 
             <p className="text-gray-700 text-sm px-2">
               {selectedFiles
@@ -180,7 +181,7 @@ function App() {
                     .join(", ")}`
                 : isDragging
                 ? "Solte aqui…"
-                : "Solte os arquivos aqui ou clique para enviar"}
+                : "Solte os arquivos aqui ou clique para selecionar"}
             </p>
 
             <button
@@ -233,19 +234,115 @@ function App() {
         </div>
       </main>
       <div id='tutorial' className="flex flex-col items-center  border-t border-[#C2C2C2] py-4 px-px gap-10">
-        <div className='flex center-items gap-10'>
-          <h1 className="text-gray-500 font-semibold py-10 px-2">
-            Fique atento para que os dados estejam escritos corretamente,
-            respeite todos os títulos das colunas, por exemplo:
-            "graduacao", "ultimaPromocao", "opcao1".
-          </h1>
-          <img src="/tabela.svg" className='w-120 h-45' />
+        <div className='gap-10'>
+          <div>
+            <h1 className="text-2xl text-[#217346] font-bold">
+              FIQUE ATENTO!
+            </h1>
+            <div className='flex items-center gap-2'>
+              <CheckIcon color='#217346' />
+              <h1 className="text-gray-500 font-semibold py-5 px-2">As informações precisam estar digitadas de forma correta na tabela</h1>
+            </div>
+            <div className='flex items-center gap-2'>
+              <CheckIcon color='#217346' />
+              <h1 className="text-gray-500 font-semibold py-5 px-2">As células não podem estar vazias</h1>
+            </div>
+            <div className='flex items-center gap-2'>
+              <CheckIcon color='#217346' />
+              <h1 className="text-gray-500 font-semibold py-5 px-2">Nos títulos das colunas não devem conter caracteres especiais ou espaços</h1>
+            </div>
+            <div className='flex items-center gap-2'>
+              <CheckIcon color='#217346' />
+              <h1 className="text-gray-500 font-semibold py-5 px-2">Os títulos das colunas devem estar escritos de forma igual</h1>
+            </div>
+              <div className='flex items-center gap-2 px-5'>
+                <div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">graduacao</h1>
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">numeral</h1>
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">ultimaPromocao</h1>
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">nome</h1> 
+                  </div>
+                </div>
+                <div className='px-20'>
+                    <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">opcao1</h1>
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">opcao2</h1>
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">opcao3</h1> 
+                  </div>
+                </div>
+              </div>
+              <div className='flex items-center gap-2'>
+                <CheckIcon color='#217346'/>
+                <h1 className="text-gray-500 font-semibold py-10 px-2">As graduações devem estar escritas como abreviações, as opções são:</h1>
+              </div>
+              <div className='flex items-center gap-2 px-5'>
+                <div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">SD - Soldado</h1>
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">CB - Cabo</h1>
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">3SGT - Terceiro Sargento</h1>
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">2SGT - Segundo Sargento</h1> 
+                  </div>
+                </div>
+                <div className='px-20'>
+                    <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">1SGT - Primeiro Sargento</h1>
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <DotIcon size={40} />
+                    <h1 className="text-gray-500 font-semibold py-2">ST - Sub. Tenente</h1>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div className='py-10'>
+            <img 
+              src="/tabelaNova.svg" 
+              className='border-2 border-gray-400 max-w-full rounded-lg shadow-md' 
+              alt="Tabela exemplo"
+              />
+          </div>
+
+          <div className='flex-start'>
+            <h1 className="text-2xl text-[#217346] font-bold">
+                VÍDEO TUTORIAL:
+            </h1>
+          </div>
         </div>
         <div>
           <iframe 
           width="560" 
           height="315" 
-          src="https://www.youtube.com/embed/Sdty5B8BP4k?si=Ikj_EFP2PpihLnsO" 
+          src="https://www.youtube.com/embed/GwznSbarFr0?si=hc8PaCd-nvuCEnUS" 
           title="YouTube video player"
           frameBorder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -255,7 +352,7 @@ function App() {
         </div>
       </div>
       <footer id='contato' className="flex flex-col border-t border-[#C2C2C2] py-4 px-px gap-1">
-              <h1 className="text-gray-500 text-2xl px-0 py-2">Contato</h1>
+              <h1 className="text-[#217346] text-2xl font-bold px-0 py-2">CONTATO</h1>
               <div className='flex'>
                 <GrLinkedin />
                 <a href='https://www.linkedin.com/in/joseandersonsales/' className="text-gray-500 text-sm px-2"> @joseandersonsales</a>
